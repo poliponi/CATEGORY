@@ -9,7 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
   --primary:#2d4cc8;
   --primary2:#4c6fff;
@@ -22,105 +21,57 @@
   --radius:20px;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
   background:var(--bg);
   font-family:'Poppins',sans-serif;
   color:var(--text);
-  overflow-x:hidden;
 }
 
 .bg{
   position:fixed;
   inset:0;
   z-index:-1;
-  overflow:hidden;
-}
-
-.bg::before,
-.bg::after{
-  content:'';
-  position:absolute;
-  width:350px;
-  height:350px;
-  border-radius:50%;
-  filter:blur(90px);
-  opacity:.15;
-}
-
-.bg::before{
-  background:#4c6fff;
-  top:-100px;
-  left:-100px;
-}
-
-.bg::after{
-  background:#8b5cf6;
-  bottom:-100px;
-  right:-100px;
 }
 
 .header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:22px 20px;
+  padding:20px;
   max-width:1200px;
   margin:auto;
 }
 
 .logo{
-  font-size:24px;
+  font-size:22px;
   font-weight:800;
   color:var(--primary);
 }
 
-.lang{
-  font-size:14px;
-  font-weight:600;
-  color:var(--muted);
-}
-
 .steps{
   display:flex;
-  align-items:center;
-  gap:12px;
-  padding:0 20px 24px;
+  gap:10px;
+  padding:0 20px 20px;
   max-width:1200px;
   margin:auto;
-  overflow-x:auto;
 }
 
 .step{
-  min-width:34px;
-  height:34px;
+  width:30px;
+  height:30px;
   border-radius:50%;
-  border:2px solid #cbd5e1;
+  border:2px solid #ccc;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:14px;
-  font-weight:700;
-  color:#94a3b8;
-  background:white;
 }
 
 .step.active{
-  border-color:var(--primary);
   background:var(--primary);
   color:white;
-  box-shadow:0 8px 18px rgba(45,76,200,.25);
-}
-
-.step-text{
-  font-size:14px;
-  color:var(--muted);
-  white-space:nowrap;
+  border:none;
 }
 
 .container{
@@ -130,488 +81,234 @@ body{
 }
 
 .banner{
+  border-radius:20px;
   overflow:hidden;
-  border-radius:28px;
-  box-shadow:var(--shadow);
-  margin-bottom:28px;
+  margin-bottom:25px;
 }
 
 .banner img{
   width:100%;
-  height:320px;
+  height:250px;
   object-fit:cover;
-  display:block;
-}
-
-.section{
-  margin-bottom:28px;
 }
 
 .section-title{
-  font-size:28px;
+  font-size:24px;
   font-weight:800;
-  margin-bottom:8px;
-}
-
-.section-subtitle{
-  color:var(--muted);
   margin-bottom:10px;
-  font-size:15px;
-}
-
-.limit-note{
-  color:#dc2626;
-  font-size:14px;
-  font-weight:700;
-  margin-bottom:22px;
-}
-
-.ticket-grid{
-  display:grid;
-  gap:18px;
 }
 
 .ticket{
-  background:rgba(255,255,255,0.92);
-  backdrop-filter:blur(12px);
-  border-radius:24px;
-  padding:22px;
-  border:1px solid rgba(255,255,255,0.4);
+  background:white;
+  padding:20px;
+  border-radius:20px;
+  margin-bottom:15px;
   box-shadow:var(--shadow);
-  transition:.3s;
-}
-
-.ticket:hover{
-  transform:translateY(-4px);
 }
 
 .ticket-header{
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  margin-bottom:18px;
-  gap:12px;
-}
-
-.ticket-name{
-  font-size:18px;
-  font-weight:700;
-}
-
-.badge{
-  padding:7px 12px;
-  border-radius:999px;
-  background:#eef2ff;
-  color:var(--primary);
-  font-size:12px;
-  font-weight:700;
-}
-
-.badge.sold{
-  background:#fee2e2;
-  color:#dc2626;
-}
-
-.ticket-body{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:16px;
+  margin-bottom:10px;
 }
 
 .price{
-  font-size:28px;
+  font-size:22px;
   font-weight:800;
-}
-
-.price small{
-  display:block;
-  font-size:13px;
-  color:var(--muted);
-  font-weight:500;
-  margin-top:4px;
 }
 
 .counter{
   display:flex;
+  gap:10px;
   align-items:center;
-  gap:12px;
-  background:#f8fafc;
-  padding:8px 12px;
-  border-radius:999px;
 }
 
 .counter button{
-  width:36px;
-  height:36px;
+  width:35px;
+  height:35px;
   border:none;
   border-radius:50%;
-  background:linear-gradient(135deg,var(--primary),var(--primary2));
+  background:var(--primary);
   color:white;
-  font-size:18px;
   cursor:pointer;
-  transition:.2s;
 }
 
-.counter button:hover{
-  transform:scale(1.08);
-}
-
-.counter span{
-  min-width:18px;
-  text-align:center;
-  font-size:16px;
-  font-weight:700;
-}
-
-.sold-out{
-  opacity:.7;
-}
-
-.sold-text{
-  font-size:15px;
-  color:#dc2626;
-  font-weight:700;
+.counter button:disabled{
+  background:#ccc;
+  cursor:not-allowed;
 }
 
 .summary{
   background:white;
-  border-radius:24px;
-  padding:24px;
-  box-shadow:var(--shadow);
-  margin-bottom:120px;
-}
-
-.summary h3{
-  margin-bottom:18px;
-  font-size:22px;
+  padding:20px;
+  border-radius:20px;
+  margin-top:20px;
 }
 
 .row{
   display:flex;
   justify-content:space-between;
-  margin-bottom:14px;
-  color:#555;
-}
-
-hr{
-  border:none;
-  border-top:1px solid var(--border);
-  margin:18px 0;
+  margin-bottom:10px;
 }
 
 .footer{
   position:fixed;
   bottom:0;
-  left:0;
   width:100%;
-  background:rgba(255,255,255,0.96);
-  backdrop-filter:blur(18px);
-  border-top:1px solid var(--border);
-  padding:18px 20px;
-  z-index:999;
-}
-
-.footer-wrap{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:18px;
-}
-
-.total{
-  display:flex;
-  flex-direction:column;
-}
-
-.total small{
-  color:var(--muted);
-  font-size:13px;
-}
-
-.total strong{
-  font-size:22px;
+  background:white;
+  padding:15px;
+  border-top:1px solid #eee;
 }
 
 .buy{
+  width:100%;
+  padding:15px;
   border:none;
-  padding:16px 26px;
-  border-radius:16px;
-  background:linear-gradient(135deg,var(--primary),var(--primary2));
+  border-radius:10px;
+  background:var(--primary);
   color:white;
-  font-size:15px;
   font-weight:700;
   cursor:pointer;
-  transition:.3s;
-  box-shadow:0 10px 25px rgba(45,76,200,.25);
-}
-
-.buy:hover{
-  transform:translateY(-2px);
 }
 
 .buy:disabled{
-  background:#cbd5e1;
-  box-shadow:none;
-  cursor:not-allowed;
+  background:#ccc;
 }
-
-@media(max-width:768px){
-
-.banner img{
-  height:220px;
-}
-
-.ticket-body{
-  flex-direction:column;
-  align-items:flex-start;
-}
-
-.footer-wrap{
-  flex-direction:column;
-  align-items:stretch;
-}
-
-.buy{
-  width:100%;
-}
-
-.section-title{
-  font-size:24px;
-}
-
-.price{
-  font-size:24px;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="bg"></div>
-
 <div class="header">
   <div class="logo">POLIPONI</div>
-  <div class="lang">🇮🇩 Indonesia</div>
 </div>
 
 <div class="steps">
-<div class="step active">1</div>
-<div class="step-text">Pilih Kategori</div>
-
-<div class="step">2</div>
-<div class="step-text">Isi Data</div>
-
-<div class="step">3</div>
-<div class="step-text">Pembayaran</div>
-
-<div class="step">4</div>
-<div class="step-text">Selesai</div>
+  <div class="step active">1</div>
+  <div class="step">2</div>
+  <div class="step">3</div>
 </div>
 
 <div class="container">
 
 <div class="banner">
-  <img src="banner.jpg" alt="Banner Event">
+  <img src="https://via.placeholder.com/1200x400" alt="Banner">
 </div>
 
-<div class="section">
+<h2 class="section-title">🎟️ TIKET</h2>
 
-<h2 class="section-title">🎟️ TIKET REGULER</h2>
+<div class="ticket">
+  <div class="ticket-header">
+    <div>PREMIUM</div>
+    <div>REGULER</div>
+  </div>
 
-<div class="section-subtitle">
-Limited additional access untuk konser SHEILA-ON 7 BALI Experience
-</div>
+  <div class="price">Rp475.000</div>
 
-<div class="limit-note">
-Maksimal pembelian 10 tiket per transaksi
-</div>
-
-<div class="ticket-grid">
-
-<div class="ticket sold-out">
-<div class="ticket-header">
-<div class="ticket-name">FESTIVAL</div>
-<div class="badge sold">SOLD OUT</div>
-</div>
-
-<div class="ticket-body">
-<div class="price">
-Sold Out
-<small>Tiket festival sudah habis</small>
-</div>
-<div class="sold-text">Tidak Tersedia</div>
-</div>
+  <div class="counter">
+    <button onclick="dec('premium')" id="decPremium">-</button>
+    <span id="premium">0</span>
+    <button onclick="inc('premium')">+</button>
+  </div>
 </div>
 
 <div class="ticket">
-<div class="ticket-header">
-<div class="ticket-name">PREMIUM</div>
-<div class="badge">REGULER</div>
-</div>
+  <div class="ticket-header">
+    <div>FAST TRACK</div>
+    <div>REGULER</div>
+  </div>
 
-<div class="ticket-body">
-<div class="price">
-Rp475.000
-<small>Reguler</small>
-</div>
+  <div class="price">Rp675.000</div>
 
-<div class="counter">
-<button onclick="dec('premium')">−</button>
-<span id="premium">0</span>
-<button onclick="inc('premium')">+</button>
-</div>
-
-</div>
-</div>
-
-<div class="ticket">
-<div class="ticket-header">
-<div class="ticket-name">FAST TRACK</div>
-<div class="badge">REGULER</div>
-</div>
-
-<div class="ticket-body">
-<div class="price">
-Rp675.000
-<small>Reguler</small>
-</div>
-
-<div class="counter">
-<button onclick="dec('fast')">−</button>
-<span id="fast">0</span>
-<button onclick="inc('fast')">+</button>
-</div>
-
-</div>
-</div>
-
-</div>
+  <div class="counter">
+    <button onclick="dec('fast')" id="decFast">-</button>
+    <span id="fast">0</span>
+    <button onclick="inc('fast')">+</button>
+  </div>
 </div>
 
 <div class="summary">
-
-<h3>Rincian Pesanan</h3>
-
-<div class="row">
-<span>Premium</span>
-<span id="pTotal">Rp0</span>
-</div>
-
-<div class="row">
-<span>Fast Track</span>
-<span id="faTotal">Rp0</span>
-</div>
-
-<hr>
-
-<div class="row">
-<strong>Total Pembayaran</strong>
-<strong id="grand">Rp0</strong>
-</div>
-
+  <div class="row">
+    <span>Premium</span>
+    <span id="pTotal">Rp0</span>
+  </div>
+  <div class="row">
+    <span>Fast</span>
+    <span id="fTotal">Rp0</span>
+  </div>
+  <hr>
+  <div class="row">
+    <strong>Total</strong>
+    <strong id="grand">Rp0</strong>
+  </div>
 </div>
 
 </div>
 
 <div class="footer">
-<div class="footer-wrap">
-
-<div class="total">
-<small>Total Pembayaran</small>
-<strong id="grand2">Rp0</strong>
-</div>
-
-<button class="buy" id="buy" onclick="beli()" disabled>
-🎟️ Lanjut Pembelian
-</button>
-
-</div>
+  <button class="buy" id="buy" disabled onclick="beli()">Lanjut Pembelian</button>
 </div>
 
 <script>
-
-let data = {
-  premium:0,
-  fast:0
-};
+let data = { premium:0, fast:0 };
 
 const price = {
-  premium:400000,
-  fast:600000
+  premium:475000,
+  fast:675000
 };
 
-const MAX_TOTAL = 10;
+const MAX = 10;
 
 function totalQty(){
   return data.premium + data.fast;
 }
 
 function inc(type){
-
-  if(totalQty() >= MAX_TOTAL){
-    alert("Maksimal pembelian 10 tiket per transaksi.");
+  if(totalQty() >= MAX){
+    alert("Maksimal 10 tiket");
     return;
   }
-
   data[type]++;
   update();
 }
 
 function dec(type){
-
   if(data[type] > 0){
     data[type]--;
     update();
   }
-
 }
 
-function rupiah(num){
-  return "Rp" + num.toLocaleString("id-ID");
+function rupiah(n){
+  return "Rp" + n.toLocaleString("id-ID");
 }
 
 function update(){
-
   let p = data.premium * price.premium;
-  let fa = data.fast * price.fast;
-  let total = p + fa;
+  let f = data.fast * price.fast;
+  let t = p + f;
 
   document.getElementById("premium").innerText = data.premium;
   document.getElementById("fast").innerText = data.fast;
 
   document.getElementById("pTotal").innerText = rupiah(p);
-  document.getElementById("faTotal").innerText = rupiah(fa);
+  document.getElementById("fTotal").innerText = rupiah(f);
+  document.getElementById("grand").innerText = rupiah(t);
 
-  document.getElementById("grand").innerText = rupiah(total);
-  document.getElementById("grand2").innerText = rupiah(total);
+  document.getElementById("buy").disabled = t === 0;
 
-  document.getElementById("buy").disabled = total === 0;
+  document.getElementById("decPremium").disabled = data.premium === 0;
+  document.getElementById("decFast").disabled = data.fast === 0;
 }
 
 function beli(){
+  let total = (data.premium * price.premium) + (data.fast * price.fast);
 
-  let total =
-  (data.premium * price.premium) +
-  (data.fast * price.fast);
+  let url = "https://poliponi.github.io/PEMBELIAN/" +
+  `?premium=${data.premium}&fast=${data.fast}&total=${total}`;
 
-  if(total > 0){
-
-    let url =
-    "https://poliponi.github.io/PEMBELIAN/" +
-    `?premium=${data.premium}&fast=${data.fast}&qty=${totalQty()}&total=${total}`;
-
-    window.location.href = url;
-
-  }
-
+  window.location.href = url;
 }
-
 </script>
 
 </body>
